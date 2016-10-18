@@ -50,12 +50,14 @@
         {
           'action_name': 'unpack_sqlite_dep',
           'inputs': [
-            './sqlite-autoconf-<@(sqlite_version).tar.gz'
+            # './sqlite-autoconf-<@(sqlite_version).tar.gz'
+            './sqlite-autoconf-<@(sqlite_version)'
           ],
           'outputs': [
             '<(SHARED_INTERMEDIATE_DIR)/sqlite-autoconf-<@(sqlite_version)/sqlite3.c'
           ],
-          'action': ['python','./extract.py','./sqlite-autoconf-<@(sqlite_version).tar.gz','<(SHARED_INTERMEDIATE_DIR)']
+          # 'action': ['python','./extract.py','./sqlite-autoconf-<@(sqlite_version).tar.gz','<(SHARED_INTERMEDIATE_DIR)']
+          'action': ['cp','-r','./sqlite-autoconf-<@(sqlite_version)','<(SHARED_INTERMEDIATE_DIR)']
         }
       ],
       'direct_dependent_settings': {
