@@ -7,8 +7,10 @@
     <h1>Hello World!</h1>
     Using node-sqlite3:
     <script>
-    var sqlite = require('sqlite3');
-    document.write(sqlite.VERSION);
+    require('nw.gui').Window.get().focus()
+
+    var sqlite = require('../../');
+    document.write('<span style="color:green">v' + sqlite.VERSION + '</span>');
     </script>.
   </body>
 </html>

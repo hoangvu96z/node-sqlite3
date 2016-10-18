@@ -1,6 +1,10 @@
 {
   "name": "nw-demo",
   "main": "index.html",
+  "scripts": {
+    "rebuild": "cd ../.. && node-pre-gyp rebuild --runtime=node-webkit --target=0.12.3 --target_arch=x64",
+    "start": "nw use 0.12.3 && nw ."
+  },
   "window": {
     "toolbar": false,
     "width": 800,
